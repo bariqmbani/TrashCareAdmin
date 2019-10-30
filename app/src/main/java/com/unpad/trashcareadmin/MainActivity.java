@@ -33,6 +33,14 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        tambahPetugas.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent petugas = new Intent(MainActivity.this, AddPetugasActivity.class);
+                startActivity(petugas);
+            }
+        });
+
     }
 
 

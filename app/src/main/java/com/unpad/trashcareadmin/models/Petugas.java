@@ -1,23 +1,11 @@
-package Model;
+package com.unpad.trashcareadmin.models;
 
-public class WargaModel {
+public class Petugas {
     private String nama;
     private String alamat;
     private String no_telp;
-    private String id_warga;
+    private String id_petugas;
     private String password;
-
-    public WargaModel() {
-
-    }
-
-    public WargaModel(String nama, String alamat, String no_telp, String id_warga, String password) {
-        this.nama = nama;
-        this.alamat = alamat;
-        this.no_telp = no_telp;
-        this.id_warga = id_warga;
-        this.password = password;
-    }
 
     public String getNama() {
         return nama;
@@ -43,12 +31,12 @@ public class WargaModel {
         this.no_telp = no_telp;
     }
 
-    public String getId_warga() {
-        return id_warga;
+    public String getId_petugas() {
+        return id_petugas;
     }
 
-    public void setId_warga(String id_warga) {
-        this.id_warga = id_warga;
+    public void setId_petugas(String id_petugas) {
+        this.id_petugas = id_petugas;
     }
 
     public String getPassword() {

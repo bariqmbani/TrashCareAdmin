@@ -11,11 +11,9 @@ import android.widget.Toast;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Objects;
 
-import Model.WargaModel;
+import com.unpad.trashcareadmin.models.Warga;
 
 public class AddWargaActivity extends AppCompatActivity {
 
@@ -55,14 +53,20 @@ public class AddWargaActivity extends AppCompatActivity {
                     Toast.makeText(AddWargaActivity.this, "Data harus diisi semua!", Toast.LENGTH_SHORT).show();
                 }
                 else {
-                    WargaModel warga = new WargaModel(nama, alamat, noTelp, idWarga, password);
+                    Warga warga = new Warga(nama, alamat, noTelp, idWarga, password);
                     db.collection(COLLECTION_NAME_KEY).document(idWarga).set(warga).addOnSuccessListener(new OnSuccessListener<Void>() {
                         @Override
                         public void onSuccess(Void aVoid) {
                             Toast.makeText(AddWargaActivity.this, "Data Berhasil Ditambahkan!", Toast.LENGTH_SHORT).show();
                         }
                     });
+                    etNama.getText().clear();
+                    etAlamat.getText().clear();
+                    etNoTelp.getText().clear();
+                    etIdWarga.getText().clear();
+                    etPassword.getText().clear();
                 }
+
             }
         });
 

@@ -14,7 +14,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
-import Model.AdminLoginModel;
+import com.unpad.trashcareadmin.models.Admin;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -47,7 +47,7 @@ public class LoginActivity extends AppCompatActivity {
                         @Override
                         public void onSuccess(DocumentSnapshot documentSnapshot) {
                             if (documentSnapshot.exists()) {
-                                AdminLoginModel user = documentSnapshot.toObject(AdminLoginModel.class);
+                                Admin user = documentSnapshot.toObject(Admin.class);
                                 if (user.getPassword().equals(admPassword.getText().toString())) {
                                     Toast.makeText(getApplicationContext(), "welcome admin", Toast.LENGTH_SHORT).show();
                                     Intent in = new Intent(LoginActivity.this, MainActivity.class);
